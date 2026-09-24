@@ -142,6 +142,56 @@
             box-shadow: 0 12px 25px rgba(189, 178, 255, 0.6);
         }
 
+        /* ----- 自己紹介用追加スタイル ----- */
+        .profile-greeting {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #7b2cbf;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .profile-card {
+            background: rgba(255, 255, 255, 0.65);
+            border-radius: 20px;
+            padding: 25px 30px;
+            margin: 0 auto 30px auto;
+            max-width: 500px;
+            text-align: left;
+            box-shadow: 0 6px 20px rgba(189, 178, 255, 0.25);
+            border: 2px solid #ffffff;
+        }
+
+        .profile-title {
+            color: #7b2cbf;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-top: 0;
+            margin-bottom: 15px;
+            border-bottom: 2px dashed #bdb2ff;
+            padding-bottom: 8px;
+        }
+
+        .profile-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            line-height: 2.2;
+        }
+
+        .profile-list li {
+            font-size: 0.95rem;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .profile-list .label {
+            font-weight: bold;
+            color: #7b2cbf;
+            margin-right: 8px;
+        }
+
         /* ----- スマホ対応 (レスポンシブ) ----- */
         @media (max-width: 600px) {
             .container {
@@ -163,6 +213,10 @@
                 font-size: 0.8rem; /* スマホで文字がはみ出ないよう調整 */
                 border-radius: 15px;
             }
+
+            .profile-card {
+                padding: 20px 15px;
+            }
         }
     </style>
 </head>
@@ -171,7 +225,7 @@
     <div class="container">
         <h1>Welcome to the World</h1>
 
-        <!-- タブボタン (3つ) -->
+        <!-- タブボタン (4つ) -->
         <div class="tab-menu">
             <button class="tab-btn active" onclick="switchTab(event, 'tab1')">トップページ</button>
             <button class="tab-btn" onclick="switchTab(event, 'tab2')">イベント</button>
@@ -179,9 +233,27 @@
             <button class="tab-btn" onclick="switchTab(event, 'tab4')">今後の予定</button>
         </div>
 
-        <!-- タブ1のコンテンツ -->
+        <!-- タブ1のコンテンツ (自己紹介) -->
         <div id="tab1" class="tab-panel active">
-            <p>ようこそ！<br>ここに自己紹介とか入れる予定。</p>
+            <div class="profile-greeting">
+                こんこと〜.ᐟ.ᐟ<br>
+                甘音ことね です.ᐟ
+            </div>
+
+            <div class="profile-card">
+                <div class="profile-title">&lt;自己紹介&gt;</div>
+                <ul class="profile-list">
+                    <li><span class="label">名前 ➸</span> 甘音ことね</li>
+                    <li><span class="label">読み ➸</span> あまね ことね</li>
+                    <li><span class="label">年齢 ➸</span> 12歳</li>
+                    <li><span class="label">誕生日 ➸</span> 2月8日</li>
+                    <li><span class="label">Fm ➸</span> 🫧🎤🌟</li>
+                    <li><span class="label">Fn ➸</span> ことねる</li>
+                    <li><span class="label">好きなこと、特技 ➸</span> 歌を歌うこと、ダンス、ロゴを描くこと</li>
+                    <li><span class="label">メンカラ(イメカラ) ➸</span> 🩵ᩚ💜ᩚ</li>
+                </ul>
+            </div>
+
             <a href="#" class="cute-button">Click Me! 1</a>
         </div>
 
@@ -194,6 +266,7 @@
         <div id="tab3" class="tab-panel">
             <p>3つ目のタブです。</p>
         </div>
+
         <!-- タブ4のコンテンツ -->
         <div id="tab4" class="tab-panel">
             <p>4つ目のタブです。</p>
