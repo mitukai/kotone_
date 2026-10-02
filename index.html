@@ -218,6 +218,49 @@
                 padding: 20px 15px;
             }
         }
+        /* ----- 立ち絵レイアウト用CSS ----- */
+.profile-layout {
+    display: flex;
+    flex-direction: column; /* スマホでは縦並び */
+    align-items: center;
+    gap: 20px;
+}
+
+.profile-img-container {
+    width: 100%;
+    max-width: 280px; /* スマホ時の立ち絵の最大幅 */
+}
+
+.tachie-img {
+    width: 100%;
+    height: auto; /* アスペクト比(1075:1523)を維持 */
+    display: block;
+    /* ふんわりした影をつけて立ち絵を浮き立たせる */
+    filter: drop-shadow(0 10px 15px rgba(189, 178, 255, 0.5));
+}
+
+.profile-text-container {
+    width: 100%;
+}
+
+/* PC・タブレット表示（横幅600px以上）の調整 */
+@media (min-width: 600px) {
+    .profile-layout {
+        flex-direction: row; /* 横並びにする */
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .profile-img-container {
+        max-width: 300px; /* PCでの立ち絵の幅 */
+        flex-shrink: 0;   /* 画像が潰れないように設定 */
+    }
+
+    .profile-text-container {
+        flex: 1;
+        text-align: center;
+    }
+}
     </style>
 </head>
 <body>
@@ -233,8 +276,16 @@
             <button class="tab-btn" onclick="switchTab(event, 'tab4')">今後の予定</button>
         </div>
 
-        <!-- タブ1のコンテンツ (自己紹介) -->
-        <div id="tab1" class="tab-panel active">
+<!-- タブ1のコンテンツ (自己紹介) -->
+<div id="tab1" class="tab-panel active">
+    <div class="profile-layout">
+        <!-- 立ち絵エリア -->
+        <div class="profile-img-container">
+            <img src="S__18645076.jpg" alt="甘音ことね 立ち絵" class="tachie-img">
+        </div>
+
+        <!-- テキスト・カードエリア -->
+        <div class="profile-text-container">
             <div class="profile-greeting">
                 こんこと〜.ᐟ.ᐟ<br>
                 甘音ことね です.ᐟ
@@ -254,7 +305,7 @@
                 </ul>
             </div>
 
-            <a href="#" class="cute-button">Click Me! 1</a>
+
         </div>
 
         <!-- タブ2のコンテンツ -->
